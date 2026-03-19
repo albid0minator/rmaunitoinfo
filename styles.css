@@ -1,0 +1,520 @@
+:root {
+    color-scheme: dark;
+    --bg: oklch(18% 0.03 251);
+    --bg-soft: oklch(23% 0.03 249);
+    --bg-alt: oklch(20% 0.035 243);
+    --text: oklch(93% 0.02 250);
+    --muted: oklch(80% 0.03 245);
+    --accent: oklch(78% 0.14 195);
+    --accent-strong: oklch(66% 0.16 198);
+    --accent-warm: oklch(76% 0.12 75);
+    --radius: 1.1rem;
+    --radius-lg: 1.7rem;
+    --shadow: 0 22px 55px rgba(0, 0, 0, 0.35);
+    --content-width: 1120px;
+    --space-section: clamp(4.5rem, 9vw, 8rem);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: clip;
+    font-family: "Newsreader", Georgia, serif;
+    background:
+        radial-gradient(130% 95% at 92% 8%, color-mix(in oklch, var(--accent) 20%, transparent), transparent 45%),
+        radial-gradient(100% 85% at 8% 15%, color-mix(in oklch, var(--accent-warm) 17%, transparent), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, oklch(15% 0.02 250) 100%);
+    color: var(--text);
+    line-height: 1.55;
+}
+
+a {
+    color: inherit;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 999;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.55rem;
+    background: var(--accent);
+    color: oklch(20% 0.03 245);
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    backdrop-filter: blur(10px);
+    background: color-mix(in oklch, var(--bg) 88%, transparent);
+}
+
+.topbar-inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0.9rem 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.brand {
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    align-self: center;
+    min-width: 0;
+}
+
+.brand-main {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+    letter-spacing: 0.02em;
+    font-weight: 700;
+}
+
+.brand-sub {
+    font-size: 0.78rem;
+    color: color-mix(in oklch, var(--muted) 84%, transparent);
+}
+
+.menu-toggle {
+    justify-self: end;
+    border: 0;
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--accent) 22%, var(--bg-soft));
+    color: var(--text);
+    padding: 0.45rem 0.95rem;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.menu {
+    grid-column: 1 / -1;
+    display: none;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    padding: 0.55rem;
+}
+
+.menu.is-open {
+    display: grid;
+}
+
+.menu a {
+    padding: 0.7rem 0.75rem;
+    border-radius: 0.7rem;
+    text-decoration: none;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.9rem;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    background: color-mix(in oklch, var(--accent) 17%, transparent);
+    outline: none;
+}
+
+main {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 1rem 4.5rem;
+}
+
+.hero {
+    position: relative;
+    overflow: clip;
+    padding-top: clamp(2.6rem, 8vw, 7rem);
+    padding-bottom: clamp(2.8rem, 9vw, 6.5rem);
+}
+
+.hero-glow {
+    position: absolute;
+    filter: blur(70px);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.hero-glow-a {
+    width: min(62vw, 460px);
+    height: min(62vw, 460px);
+    top: -3rem;
+    right: -6rem;
+    background: color-mix(in oklch, var(--accent) 38%, transparent);
+}
+
+.hero-glow-b {
+    width: min(54vw, 360px);
+    height: min(54vw, 360px);
+    bottom: 0;
+    left: -5rem;
+    background: color-mix(in oklch, var(--accent-warm) 32%, transparent);
+}
+
+.eyebrow {
+    margin: 0;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+    font-weight: 800;
+}
+
+h1 {
+    margin-top: 0.6rem;
+    font-size: clamp(2.35rem, 12vw, 6rem);
+    text-wrap: balance;
+}
+
+.hero-text {
+    margin-top: 1.3rem;
+    max-width: 62ch;
+    color: var(--muted);
+    font-size: clamp(1.05rem, 3.1vw, 1.34rem);
+}
+
+.hero-actions {
+    margin-top: 1.7rem;
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: 0;
+    border-radius: 999px;
+    padding: 0.78rem 1.1rem;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(130deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: oklch(20% 0.03 245);
+}
+
+.btn-secondary {
+    background: color-mix(in oklch, var(--bg-soft) 78%, var(--accent) 22%);
+    color: var(--text);
+}
+
+.hero-kpis {
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.hero-kpis li {
+    background: color-mix(in oklch, var(--bg-alt) 82%, transparent);
+    border-radius: var(--radius);
+    padding: 0.9rem 1rem;
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 0.15rem;
+}
+
+.hero-kpis strong {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.17rem;
+}
+
+.hero-kpis span {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.section {
+    padding-top: clamp(2.4rem, 5vw, 4rem);
+}
+
+.section-head h2 {
+    margin-top: 0.7rem;
+    font-size: clamp(1.8rem, 7vw, 3.6rem);
+    text-wrap: balance;
+}
+
+.section-alt {
+    position: relative;
+    isolation: isolate;
+    background: color-mix(in oklch, var(--bg-soft) 86%, transparent);
+    border-radius: var(--radius-lg);
+    padding-inline: clamp(0.9rem, 4vw, 2.5rem);
+    padding-bottom: clamp(1.5rem, 5vw, 2.8rem);
+}
+
+.percorso-section {
+    padding-top: clamp(1.6rem, 3.5vw, 2.6rem);
+}
+
+.info-section {
+    position: relative;
+    margin-top: clamp(1rem, 3.2vw, 2rem);
+    padding-top: clamp(1.7rem, 3.8vw, 2.5rem);
+}
+
+.info-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: min(240px, 62vw);
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent), transparent 85%);
+}
+
+.faq-section {
+    margin-top: clamp(1.2rem, 3.8vw, 2.2rem);
+    overflow: clip;
+    border: 1px solid color-mix(in oklch, var(--accent) 22%, transparent);
+    box-shadow: inset 0 1px 0 color-mix(in oklch, var(--text) 14%, transparent);
+}
+
+.faq-section .section-head {
+    padding-top: clamp(0.4rem, 2vw, 0.9rem);
+}
+
+.feature-grid,
+.cards {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 0.95rem;
+}
+
+.feature,
+.info-card {
+    border-radius: var(--radius);
+    padding: 1.1rem;
+    background: color-mix(in oklch, var(--bg-soft) 84%, transparent);
+}
+
+.cards {
+    counter-reset: practical-steps;
+}
+
+.info-card {
+    position: relative;
+    padding: 1.2rem 1.1rem 1.15rem 3rem;
+    background: color-mix(in oklch, var(--bg-alt) 74%, var(--accent) 26%);
+}
+
+.info-card::before {
+    counter-increment: practical-steps;
+    content: counter(practical-steps);
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: oklch(18% 0.03 252);
+    background: var(--accent);
+}
+
+.feature h3,
+.info-card h3,
+.timeline-item h3,
+.faq-item summary {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 1.08rem;
+    margin-bottom: 0.45rem;
+}
+
+.feature p,
+.info-card p,
+.timeline-item p,
+.faq-item p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.info-card a {
+    margin-top: 0.7rem;
+    display: inline-block;
+    color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.timeline {
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.timeline-item {
+    border-radius: var(--radius);
+    padding: 1rem;
+    background: color-mix(in oklch, var(--bg) 75%, var(--accent) 25%);
+}
+
+.faq-list {
+    margin-top: 1.3rem;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.faq-item {
+    border-radius: var(--radius);
+    background: color-mix(in oklch, var(--bg-soft) 88%, transparent);
+    padding: 0.95rem 1rem;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item[open] {
+    background: color-mix(in oklch, var(--bg-soft) 70%, var(--accent) 30%);
+}
+
+.faq-item p {
+    margin-top: 0.55rem;
+}
+
+.footer {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 2.3rem 1rem 3rem;
+    color: var(--muted);
+    font-size: 0.94rem;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer p + p {
+    margin-top: 0.45rem;
+}
+
+.back-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 2.85rem;
+    height: 2.85rem;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(140deg, var(--accent) 0%, var(--accent-strong) 100%);
+    color: oklch(20% 0.03 245);
+    font-size: 1.1rem;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(1rem);
+    pointer-events: none;
+    transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.back-top.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-inview {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (min-width: 760px) {
+    .topbar-inner {
+        grid-template-columns: 1fr auto;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        gap: 0.35rem;
+        grid-column: auto;
+        background: transparent;
+        padding: 0;
+    }
+
+    .hero-kpis {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-grid,
+    .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
