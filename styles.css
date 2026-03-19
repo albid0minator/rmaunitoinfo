@@ -29,10 +29,7 @@ body {
     min-height: 100vh;
     overflow-x: clip;
     font-family: "Newsreader", Georgia, serif;
-    background:
-        radial-gradient(ellipse 160% 130% at 115% -10%, color-mix(in oklch, var(--accent) 30%, transparent), transparent 60%),
-        radial-gradient(ellipse 130% 100% at -15% 25%, color-mix(in oklch, var(--accent-warm) 25%, transparent), transparent 60%),
-        linear-gradient(180deg, var(--bg) 0%, oklch(15% 0.02 250) 100%);
+    background: var(--bg);
     color: var(--text);
     line-height: 1.55;
 }
@@ -64,7 +61,8 @@ a {
     top: 0;
     z-index: 30;
     backdrop-filter: blur(10px);
-    background: color-mix(in oklch, var(--bg) 88%, transparent);
+    background: color-mix(in oklch, var(--bg-soft) 95%, transparent);
+    border-bottom: 1px solid color-mix(in oklch, var(--text) 8%, transparent);
 }
 
 .topbar-inner {
