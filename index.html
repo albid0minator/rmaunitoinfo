@@ -8,7 +8,7 @@
     <title>UniTo Informatica | Incontro RMA Aosta</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;700&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=1.2">
 </head>
 <body>
@@ -17,21 +17,23 @@
     <header class="topbar">
         <div class="topbar-inner">
             <a class="brand" href="#home" aria-label="Torna all'inizio">
-                <span class="brand-main">UniTo Informatica</span>
-                <span class="brand-sub">Incontro RMA Aosta</span>
+                <span class="brand-root">rma_aosta</span>
+                <span class="brand-sep">/</span>
+                <span class="brand-main">unito_info</span>
             </a>
 
-            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-links" aria-label="Apri menu di navigazione">
-                Menu
-            </button>
+            <div class="topbar-right">
+                <nav class="menu" id="menu-links" aria-label="Navigazione principale">
+                    <a href="#perche"><span class="nav-num">01</span>perche</a>
+                    <a href="#percorso"><span class="nav-num">02</span>percorso</a>
+                    <a href="#confronto"><span class="nav-num">03</span>diff</a>
+                    <a href="#info"><span class="nav-num">04</span>pratica</a>
+                </nav>
 
-            <nav class="menu" id="menu-links" aria-label="Navigazione principale">
-                <a href="#perche">Perche UniTo</a>
-                <a href="#percorso">Percorso</a>
-                <a href="#confronto">UniTo vs PoliTo</a>
-                <a href="#info">Info pratiche</a>
-                <a href="#faq">FAQ</a>
-            </nav>
+                <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-links" aria-label="Apri menu di navigazione">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -62,10 +64,7 @@
                         <span class="terminal-title">bash — informatica@unito</span>
                     </div>
                     <div class="terminal-body">
-                        <p><span class="t-prompt">$</span> cd /laurea/informatica</p>
-                        <p><span class="t-prompt">$</span> python main.py <span class="t-cursor">▋</span></p>
-                        <p class="t-out">→ Ciao! Benvenuto al corso di Informatica UniTo.</p>
-                        <p class="t-out">→ Durata: 3 anni  |  Sede: Torino  |  Test: TOLC-I</p>
+                        <p><span class="t-prompt">$</span> cd /laurea/informatica</p><p><span class="t-prompt">$</span> python main.py <span class="t-cursor">▋</span></p><p class="t-out">→ Ciao! Benvenuto al corso di Informatica UniTo.</p><p class="t-out">→ Durata: 3 anni  |  Sede: Torino  |  Test: TOLC-I</p>
                     </div>
                 </div>
             </div>
@@ -110,93 +109,155 @@
 
         <section class="section section-alt percorso-section" id="percorso">
             <div class="section-head reveal">
-                <p class="eyebrow">Percorso</p>
-                <h2>Dal primo semestre al lavoro: cosa succede davvero.</h2>
+                <p class="eyebrow">Project Roadmap</p>
+                <h2>Il tuo percorso di studi: <span class="syntax-keyword">build</span> process.</h2>
             </div>
 
-            <ol class="timeline">
-                <li class="timeline-item reveal">
-                    <h3>1. Primo anno</h3>
-                    <p>Fondamenti di programmazione, matematica discreta, analisi e architettura dei calcolatori. Qui si costruiscono le basi.</p>
-                </li>
-                <li class="timeline-item reveal">
-                    <h3>2. Secondo anno</h3>
-                    <p>Algoritmi, basi di dati, sistemi operativi e reti. Inizi a vedere come i pezzi si incastrano in sistemi completi.</p>
-                </li>
-                <li class="timeline-item reveal">
-                    <h3>3. Terzo anno</h3>
-                    <p>Esami a scelta, progetto finale e collegamento con aziende/stage. Inizi a specializzarti nella direzione che preferisci.</p>
-                </li>
-            </ol>
+            <div class="roadmap reveal">
+                <div class="roadmap-item">
+                    <div class="roadmap-dot active"></div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-header">
+                            <span class="roadmap-tag tag-blue">Phase 01</span>
+                            <h3>Anno 1: Foundations.init()</h3>
+                        </div>
+                        <p>Costruiamo le fondamenta: logica matematica, architettura dei computer e le prime righe di codice. È dove impari a pensare come una macchina.</p>
+                        <div class="roadmap-stack">
+                            <span>#C</span> <span>#Logica</span> <span>#Matematica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-dot active"></div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-header">
+                            <span class="roadmap-tag tag-purple">Phase 02</span>
+                            <h3>Anno 2: Core.systems()</h3>
+                        </div>
+                        <p>Si entra nel vivo. Algoritmi complessi, basi di dati per gestire il mondo reale, sistemi operativi e reti. Capirai come comunicano i computer.</p>
+                        <div class="roadmap-stack">
+                            <span>#Java</span> <span>#SQL</span> <span>#Networking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-dot active"></div>
+                    <div class="roadmap-content">
+                        <div class="roadmap-header">
+                            <span class="roadmap-tag tag-green">Phase 03</span>
+                            <h3>Anno 3: Deployment.run()</h3>
+                        </div>
+                        <p>La tua specializzazione. Esami a scelta tra AI, Security o Web avanzato. Concludi con un tirocinio in azienda o un progetto di ricerca.</p>
+                        <div class="roadmap-stack">
+                            <span>#AI</span> <span>#Cybersecurity</span> <span>#Project</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="section confronto-section" id="confronto">
             <div class="section-head reveal">
-                <p class="eyebrow">UniTo vs PoliTo</p>
-                <h2>Quale scegliere? Dipende da te.</h2>
+                <p class="eyebrow">Comparison.diff()</p>
+                <h2>Quale scegliere? Dipende dai tuoi <span class="syntax-keyword">input</span>.</h2>
             </div>
 
             <div class="confronto-grid">
+                <!-- UniTo Card -->
                 <div class="confronto-col confronto-unito reveal">
+                    <div class="confronto-top-bar">
+                        <span class="status-dot"></span>
+                        <span class="file-name">unito_info.sys</span>
+                    </div>
                     <div class="confronto-header">
-                        <span class="confronto-badge unito-badge">L-31</span>
+                        <span class="confronto-badge unito-badge">L-31 / SOFTWARE</span>
                         <h3>Informatica — UniTo</h3>
-                        <p class="confronto-subtitle">Software-centric, flessibile</p>
                     </div>
-                    <ul class="confronto-list">
-                        <li><strong>Anno 1:</strong> Programmazione, Algoritmi, Matematica discreta</li>
-                        <li><strong>Anno 2:</strong> Basi di dati, Sistemi operativi, Reti</li>
-                        <li><strong>Anno 3:</strong> Scegli tra AI, Cybersecurity, Cloud, SW avanzato</li>
-                    </ul>
-                    <div class="confronto-stats">
-                        <div class="cstat"><span class="cstat-val">40%+</span><span class="cstat-label">Coding</span></div>
-                        <div class="cstat"><span class="cstat-val">0%</span><span class="cstat-label">Fisica / HW</span></div>
-                        <div class="cstat"><span class="cstat-val">12 CFU</span><span class="cstat-label">Liberi</span></div>
-                    </div>
-                    <div class="confronto-profilo">
-                        <p class="confronto-profilo-label">Scegli UniTo se:</p>
-                        <ul>
-                            <li>Ami programmare e costruire software</li>
-                            <li>Preferisci pratica a teoria astratta</li>
-                            <li>Vuoi lavorare subito dopo la triennale</li>
-                            <li>Non ti interessa hardware o circuiti</li>
+                    
+                    <div class="confronto-body">
+                        <ul class="confronto-list">
+                            <li><span class="list-prefix">SYS:</span> <strong>Anno 1:</strong> Coding & Logica</li>
+                            <li><span class="list-prefix">SYS:</span> <strong>Anno 2:</strong> DB & OS</li>
+                            <li><span class="list-prefix">SYS:</span> <strong>Anno 3:</strong> AI & Security</li>
                         </ul>
+
+                        <div class="confronto-stats">
+                            <div class="cstat">
+                                <span class="cstat-val">40%+</span>
+                                <span class="cstat-label">Coding</span>
+                            </div>
+                            <div class="cstat">
+                                <span class="cstat-val">0%</span>
+                                <span class="cstat-label">Fisica</span>
+                            </div>
+                            <div class="cstat">
+                                <span class="cstat-val">12</span>
+                                <span class="cstat-label">CFU Liberi</span>
+                            </div>
+                        </div>
+
+                        <div class="confronto-profilo">
+                            <p class="confronto-profilo-label">Target Profile:</p>
+                            <ul>
+                                <li><span class="check-box">[x]</span> Sviluppo Software</li>
+                                <li><span class="check-box">[x]</span> Problem Solving puro</li>
+                                <li><span class="check-box">[x]</span> Flessibilità esami</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <!-- PoliTo Card -->
                 <div class="confronto-col confronto-polito reveal">
+                    <div class="confronto-top-bar">
+                        <span class="status-dot"></span>
+                        <span class="file-name">polito_eng.sys</span>
+                    </div>
                     <div class="confronto-header">
-                        <span class="confronto-badge polito-badge">L-8</span>
-                        <h3>Ingegneria Informatica — PoliTo</h3>
-                        <p class="confronto-subtitle">HW + SW, percorso ingegneristico</p>
+                        <span class="confronto-badge polito-badge">L-8 / HARDWARE</span>
+                        <h3>Ingegneria — PoliTo</h3>
                     </div>
-                    <ul class="confronto-list">
-                        <li><strong>Anno 1:</strong> Analisi, Fisica, Chimica, Circuiti</li>
-                        <li><strong>Anno 2:</strong> Elettromagnetismo, HW, Matematica II</li>
-                        <li><strong>Anno 3:</strong> Sistemi embedded, Segnali, Reti telecom</li>
-                    </ul>
-                    <div class="confronto-stats">
-                        <div class="cstat"><span class="cstat-val">20%</span><span class="cstat-label">Coding</span></div>
-                        <div class="cstat"><span class="cstat-val">40%+</span><span class="cstat-label">Mat / Fisica</span></div>
-                        <div class="cstat"><span class="cstat-val">6 CFU</span><span class="cstat-label">Liberi</span></div>
-                    </div>
-                    <div class="confronto-profilo">
-                        <p class="confronto-profilo-label">Scegli PoliTo se:</p>
-                        <ul>
-                            <li>Sei forte in matematica e fisica</li>
-                            <li>Ti affascina hardware e circuiti</li>
-                            <li>Pensi subito a una magistrale in ingegneria</li>
-                            <li>Vuoi il titolo di "Ingegnere" (protetto)</li>
+
+                    <div class="confronto-body">
+                        <ul class="confronto-list">
+                            <li><span class="list-prefix">ENG:</span> <strong>Anno 1:</strong> Analisi & Fisica</li>
+                            <li><span class="list-prefix">ENG:</span> <strong>Anno 2:</strong> Elettrotecnica</li>
+                            <li><span class="list-prefix">ENG:</span> <strong>Anno 3:</strong> Sistemi Embedded</li>
                         </ul>
+
+                        <div class="confronto-stats">
+                            <div class="cstat">
+                                <span class="cstat-val">20%</span>
+                                <span class="cstat-label">Coding</span>
+                            </div>
+                            <div class="cstat">
+                                <span class="cstat-val">40%+</span>
+                                <span class="cstat-label">Mat/Fis</span>
+                            </div>
+                            <div class="cstat">
+                                <span class="cstat-val">6</span>
+                                <span class="cstat-label">CFU Liberi</span>
+                            </div>
+                        </div>
+
+                        <div class="confronto-profilo">
+                            <p class="confronto-profilo-label">Target Profile:</p>
+                            <ul>
+                                <li><span class="check-box">[x]</span> Titolo "Ingegnere"</li>
+                                <li><span class="check-box">[x]</span> Hardware & Circuiti</li>
+                                <li><span class="check-box">[x]</span> Rigore accademico</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="confronto-bottom reveal">
                 <div class="confronto-comune">
-                    <strong>In comune:</strong> 180 CFU · 3 anni · 95% occupazione entro 1 anno · €25–32k entry level
+                    <span class="syntax-keyword">common_traits:</span> [ 180 CFU · 3 anni · 95% Job Rate ]
                 </div>
-                <p class="confronto-nota">(*) "Ingegnere" è un titolo professionale protetto, specifico del percorso L-8 PoliTo.</p>
             </div>
         </section>
 
