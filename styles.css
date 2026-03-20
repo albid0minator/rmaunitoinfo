@@ -155,6 +155,18 @@ main {
     padding-bottom: clamp(2.8rem, 9vw, 6.5rem);
 }
 
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+}
+
 .hero-glow {
     position: absolute;
     filter: blur(120px);
@@ -240,6 +252,67 @@ h1 {
 .btn-secondary {
     background: color-mix(in oklch, var(--bg-soft) 78%, var(--accent) 22%);
     color: var(--text);
+}
+
+/* ============================================================
+   TERMINAL
+   ============================================================ */
+.terminal {
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid color-mix(in oklch, var(--text) 12%, transparent);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+}
+.terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 0.9rem;
+    background: #161b22;
+    border-bottom: 1px solid color-mix(in oklch, var(--text) 10%, transparent);
+}
+.terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.terminal-dot:nth-child(1) { background: #ff5f57; }
+.terminal-dot:nth-child(2) { background: #febc2e; }
+.terminal-dot:nth-child(3) { background: #28c840; }
+.terminal-title {
+    margin-left: auto;
+    margin-right: auto;
+    color: color-mix(in oklch, var(--text) 40%, transparent);
+    font-size: 0.75rem;
+}
+.terminal-body {
+    padding: 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.terminal-body p {
+    margin: 0;
+    color: #c9d1d9;
+}
+.t-prompt {
+    color: var(--accent);
+    margin-right: 0.4rem;
+    font-weight: bold;
+}
+.t-out {
+    color: color-mix(in oklch, var(--text) 55%, transparent);
+    padding-left: 1.1rem;
+}
+.t-cursor {
+    animation: blink 1s step-end infinite;
+    color: var(--accent);
+}
+@keyframes blink {
+    50% { opacity: 0; }
 }
 
 .hero-kpis {
@@ -574,6 +647,13 @@ h1 {
     .cards {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.2rem;
+    }
+}
+
+@media (max-width: 860px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 
