@@ -94,14 +94,17 @@
 
             <div class="feature-grid">
                 <article class="feature reveal">
+                    <div class="card-icon"><i data-lucide="layers"></i></div>
                     <h3>Partenza graduale</h3>
                     <p>Non devi arrivare gia esperto. Il primo anno ti costruisce metodo: logica, fondamenti di programmazione e matematica utile.</p>
                 </article>
                 <article class="feature reveal">
+                    <div class="card-icon"><i data-lucide="flask-conical"></i></div>
                     <h3>Laboratori veri</h3>
                     <p>Non e solo teoria. Ci sono esercitazioni pratiche, progetti di gruppo e attivita che ti avvicinano al lavoro reale.</p>
                 </article>
                 <article class="feature reveal">
+                    <div class="card-icon"><i data-lucide="briefcase"></i></div>
                     <h3>Sbocchi concreti</h3>
                     <p>Sviluppo software, data science, AI, cybersecurity, automazione: il corso apre piu direzioni, non una sola.</p>
                 </article>
@@ -271,24 +274,28 @@
             <div class="career-matrix">
                 <div class="career-quad cq-dev reveal">
                     <span class="cq-tag">#build</span>
+                    <i data-lucide="code-2" class="cq-icon"></i>
                     <h3>Sviluppo &amp; Creazione</h3>
                     <p>Software Developer · Web Developer · Mobile · Game Dev</p>
                     <span class="cq-tagline">// Architetti di app e mondi digitali</span>
                 </div>
                 <div class="career-quad cq-data reveal">
                     <span class="cq-tag">#learn</span>
+                    <i data-lucide="cpu" class="cq-icon"></i>
                     <h3>Dati &amp; Intelligenza</h3>
                     <p>Data Scientist · ML Engineer · AI Specialist</p>
                     <span class="cq-tagline">// Addestratori degli algoritmi del futuro</span>
                 </div>
                 <div class="career-quad cq-ops reveal">
                     <span class="cq-tag">#deploy</span>
+                    <i data-lucide="cloud" class="cq-icon"></i>
                     <h3>Infrastruttura &amp; Cloud</h3>
                     <p>DevOps Engineer · Cloud Architect · SRE</p>
                     <span class="cq-tagline">// Costruttori dell'infrastruttura invisibile</span>
                 </div>
                 <div class="career-quad cq-sec reveal">
                     <span class="cq-tag">#protect</span>
+                    <i data-lucide="shield" class="cq-icon"></i>
                     <h3>Sicurezza &amp; Difesa</h3>
                     <p>Cybersecurity Expert · Pen Tester · Security Analyst</p>
                     <span class="cq-tagline">// Protettori dei dati digitali globali</span>
@@ -312,16 +319,19 @@
 
             <div class="cards">
                 <article class="info-card reveal">
+                    <div class="card-icon"><i data-lucide="calendar"></i></div>
                     <h3>Prenota il TOLC-S</h3>
                     <p>Scegli una data utile, verifica le scadenze del bando e segnati subito le tempistiche ufficiali.</p>
                     <a href="https://www.unito.it" target="_blank" rel="noopener noreferrer">Vai al bando</a>
                 </article>
                 <article class="info-card reveal">
+                    <div class="card-icon"><i data-lucide="file-text"></i></div>
                     <h3>Guarda il piano studi</h3>
                     <p>Leggi gli insegnamenti del primo anno e capisci subito dove avrai bisogno di allenarti di piu.</p>
                     <a href="https://www.unito.it" target="_blank" rel="noopener noreferrer">Piano del corso</a>
                 </article>
                 <article class="info-card reveal">
+                    <div class="card-icon"><i data-lucide="zap"></i></div>
                     <h3>Inizia una mini preparazione</h3>
                     <p>Dedicati a logica, matematica di base e un primo linguaggio (Python) con costanza settimanale.</p>
                     <a href="https://www.unito.it" target="_blank" rel="noopener noreferrer">Risorse utili</a>
@@ -332,20 +342,49 @@
                 <p class="eyebrow">Dove studiare</p>
                 <div class="sede-items">
                     <div class="sede-item">
-                        <span class="sede-icon" aria-hidden="true">📍</span>
+                        <span class="sede-icon" aria-hidden="true"><i data-lucide="map-pin"></i></span>
                         <div><strong>Centro Piero della Francesca</strong><span>Corso Svizzera 185, Torino (Zona Spina 3)</span></div>
                     </div>
                     <div class="sede-item">
-                        <span class="sede-icon" aria-hidden="true">🚋</span>
+                        <span class="sede-icon" aria-hidden="true"><i data-lucide="tram-front"></i></span>
                         <div><strong>Facilmente raggiungibile</strong><span>Tram Linea 9, fermata diretta</span></div>
                     </div>
                     <div class="sede-item">
-                        <span class="sede-icon" aria-hidden="true">💻</span>
-                        <div><strong>138 postazioni laboratorio</strong><span>Aule PC Linux/Windows con fibra ottica</span></div>
+                        <span class="sede-icon" aria-hidden="true"><i data-lucide="landmark"></i></span>
+                        <div><strong>Aule capienti e numerose</strong><span>Le aule lezione arrivano fino a ~150 posti: raramente ti trovi a corto di posto.</span></div>
                     </div>
                     <div class="sede-item">
-                        <span class="sede-icon" aria-hidden="true">👥</span>
-                        <div><strong>Spazi collaborativi</strong><span>Aula studio aperta e coworking per il lavoro in team</span></div>
+                        <span class="sede-icon" aria-hidden="true"><i data-lucide="presentation"></i></span>
+                        <div><strong>Proiettore in ogni aula</strong><span>Tutte le aule hanno il proiettore. Tieni presente che le prese di corrente per laptop non ci sono — portati la batteria carica.</span></div>
+                    </div>
+                    <div class="sede-item sede-item-wide">
+                        <span class="sede-icon" aria-hidden="true"><i data-lucide="monitor"></i></span>
+                        <div>
+                            <strong>138 postazioni laboratorio</strong>
+                            <span>Aule PC Linux/Windows con fibra ottica</span>
+                            <div class="sede-carousel" aria-label="Galleria immagini sede UniTo">
+                                <button class="carousel-btn carousel-prev" type="button" aria-label="Immagine precedente">‹</button>
+                                <div class="sede-carousel-viewport">
+                                    <div class="sede-carousel-track" id="sede-carousel-track">
+                                        <figure class="sede-slide is-active">
+                                            <img src="img/img1.png" alt="Foto del laboratorio informatica UniTo" class="sede-foto">
+                                        </figure>
+                                        <figure class="sede-slide">
+                                            <img src="img/Screenshot_1.png" alt="Vista aerea dell'area universitaria di Informatica UniTo" class="sede-foto">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <button class="carousel-btn carousel-next" type="button" aria-label="Immagine successiva">›</button>
+                                <div class="carousel-dots" aria-label="Selettore immagini">
+                                    <button class="carousel-dot is-active" type="button" aria-label="Vai immagine 1"></button>
+                                    <button class="carousel-dot" type="button" aria-label="Vai immagine 2"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sede-item">
+                        <span class="sede-icon" aria-hidden="true"><i data-lucide="book-open"></i></span>
+                        <div><strong>Aula studio sempre aperta</strong><span>Subito dietro l'edificio c'e una grande aula studio ad accesso libero — ideale per studiare tra una lezione e l'altra.</span></div>
                     </div>
                 </div>
             </div>
@@ -393,6 +432,8 @@
         <p>Contenuto presentato da studenti ex RMA ora all'Universita di Torino.</p>
     </footer>
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="script.js" defer></script>
+    <script src="decrypt.js" defer></script>
 </body>
 </html>

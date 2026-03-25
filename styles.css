@@ -51,10 +51,10 @@ body {
     line-height: 1.6;
 }
 
-main { 
-    max-width: 1100px; 
-    margin: 0 auto; 
-    padding: 0 1.25rem 5rem; 
+main {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
     width: 100%;
 }
 
@@ -74,13 +74,25 @@ main {
     width: 100%;
 }
 
-.topbar-inner { 
-    max-width: 1100px; 
-    margin: 0 auto; 
-    padding: 0.6rem 1.25rem; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+@media (min-width: 860px) {
+    .topbar {
+        position: fixed;
+        left: 0;
+        right: 0;
+    }
+
+    body {
+        padding-top: 64px;
+    }
+}
+
+.topbar-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0.6rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .brand {
@@ -175,9 +187,9 @@ main {
 .section-head h2 {
     margin: 0.5rem 0 0;
     font-family: var(--font-display);
-    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
     color: #fff;
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .section-alt {
@@ -199,7 +211,7 @@ main {
 
 @media (min-width: 960px) {
     .hero {
-        padding: 6rem 0;
+        padding: 3rem 0 5rem;
         gap: 4rem;
     }
 }
@@ -239,19 +251,19 @@ main {
     .hero-layout { grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 3.5rem; }
 }
 
-h1 { 
-    font-family: var(--font-display); 
-    font-size: clamp(1.8rem, 5vw, 3.5rem); 
-    line-height: 1.2; 
-    margin: 0; 
-    color: #fff; 
+h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4.5vw, 4.5rem);
+    line-height: 1.15;
+    margin: 0;
+    color: #fff;
 }
 
 .hero-text {
     margin: 1.5rem 0 2rem;
-    font-size: 1.15rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     color: var(--muted);
-    max-width: 60ch;
+    max-width: 65ch;
 }
 
 .hero-actions {
@@ -343,14 +355,14 @@ h1 {
 .roadmap-content h3 {
     margin: 0;
     font-family: var(--font-display);
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: #fff;
 }
 
 .roadmap-content p {
     margin: 0.75rem 0;
     color: var(--muted);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .roadmap-stack {
@@ -377,13 +389,13 @@ h1 {
 .feature, .info-card {
     background: var(--bg-soft);
     border: 1px solid var(--border-subtle);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 8px;
 }
 
 .feature h3, .info-card h3 {
     font-family: var(--font-display);
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--accent);
     margin-top: 0;
 }
@@ -765,6 +777,56 @@ button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation
     color: var(--muted);
 }
 
+.cq-icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    opacity: 0.7;
+}
+
+.cq-dev .cq-icon  { color: var(--syntax-str); opacity: 1; }
+.cq-data .cq-icon { color: var(--syntax-fn); opacity: 1; }
+.cq-ops .cq-icon  { color: var(--accent-warm); opacity: 1; }
+.cq-sec .cq-icon  { color: var(--syntax-keyword); opacity: 1; }
+
+/* Card icon (feature + info cards) */
+.card-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.card-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Sede icon */
+.sede-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    margin-top: 1px;
+}
+
+.sede-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
 .career-stat {
     margin-top: 1.5rem;
     display: flex;
@@ -832,7 +894,6 @@ button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation
     font-size: 0.9rem;
 }
 
-.sede-icon { font-size: 1.2rem; flex-shrink: 0; line-height: 1.5; }
 
 .sede-item strong {
     display: block;
@@ -845,6 +906,123 @@ button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation
     color: var(--muted);
     font-size: 0.83rem;
 }
+
+.sede-item-wide {
+    grid-column: 1 / -1;
+}
+
+.sede-carousel {
+    margin-top: 0.85rem;
+    position: relative;
+}
+
+.sede-carousel-viewport {
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+}
+
+.sede-carousel-track {
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.35s ease;
+    will-change: transform;
+}
+
+.sede-slide {
+    margin: 0;
+    min-width: 100%;
+}
+
+.sede-foto {
+    display: block;
+    margin-top: 0;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(13, 17, 23, 0.9);
+    color: var(--text);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carousel-btn:hover {
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.carousel-btn:focus-visible,
+.carousel-dot:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.carousel-prev {
+    left: 0.5rem;
+}
+
+.carousel-next {
+    right: 0.5rem;
+}
+
+.carousel-dots {
+    margin-top: 0.7rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+}
+
+.carousel-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    cursor: pointer;
+}
+
+.carousel-dot.is-active {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .carousel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+    .sede-foto { max-height: 220px; }
+}
+
+/* --- Decrypt effect --- */
+.dt-placeholder {
+    visibility: hidden;
+    white-space: inherit;
+}
+.dt-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    white-space: inherit;
+    pointer-events: none;
+}
+.dt-enc { color: var(--syntax-fn); opacity: 0.5; }
+.dt-char { color: inherit; }
 
 /* --- Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
